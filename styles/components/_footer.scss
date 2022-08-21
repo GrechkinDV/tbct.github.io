@@ -45,7 +45,7 @@ footer {
             a {
                 @include primaryPTag($primaryBlack);
                 @include fontSize(14);
-                font-weight: $fontBold!important;
+                font-weight: $fontBold !important;
             }
         }
 

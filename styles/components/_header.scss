@@ -26,13 +26,14 @@ header {
                 font-weight: $fontLighter;
                 color: $primaryBlack;
                 cursor: pointer;
+                text-decoration: none !important;
 
                 &.arrow_link {
                     @include arrowLink();
                 }
 
                 &:hover {
-                    @include linkHover(1.07);
+                    @include linkHover(1.07, $primaryBlack);
                 }
             }
         }

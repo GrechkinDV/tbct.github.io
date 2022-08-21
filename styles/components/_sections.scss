@@ -43,6 +43,7 @@
 
     .arrow_link {
         @include fontSize(16);
+        @include arrowLink();
     }
 }
 

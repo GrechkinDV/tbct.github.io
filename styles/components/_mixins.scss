@@ -34,9 +34,11 @@
 // Font mixins end
 
 // Arrow Link Elements
-@mixin linkHover($scaleSize) {
+@mixin linkHover($scaleSize, $color) {
     transform: scale($scaleSize);
     transition: all 0.4s ease;
+    color: $color;
+    text-decoration: none;
 }
 
 @mixin arrowLink() {
@@ -66,7 +68,7 @@
     color: $primaryWhite;
 
     &:hover {
-        @include linkHover(1.07);
+        @include linkHover(1.07, $primaryWhite);
     }
 }
 

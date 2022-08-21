@@ -1,0 +1,121 @@
+@import "./variables";
+@import "./mixins";
+
+footer {
+    height: 860px;
+
+    .footer_top {
+        height: 780px;
+        padding: 72px 165px;
+        background-color: $primaryWhite;
+    }
+    
+    .footer_bottom {
+        padding: 0 165px;
+        height: 77px;
+
+        .footer_row {
+            &:first-child {
+                gap: 8px;
+            }
+            &:nth-child(2) {
+                gap: 35px;
+            }
+        }
+
+        a {
+            @include fontSize(12);
+            font-weight: $fontLighter;
+            color: $secondaryGrey;
+        }
+    }
+
+    .footer_row {
+        @include flex(row, center, space-between);
+    }
+
+    .rows_container {
+        @include flex(row, start, space-between);
+        margin-top: 68px;
+
+        p {
+            @include noMargin();
+            margin-bottom: 28px;
+
+            a {
+                @include primaryPTag($primaryBlack);
+                @include fontSize(14);
+                font-weight: $fontBold!important;
+            }
+        }
+
+        .footer_column {
+            @include flex(column, left, center);
+
+            a {
+                @include fontSize(12);
+                font-weight: $fontLighter;
+                color: $primaryGrey;
+                margin-bottom: 12px;
+                cursor: pointer;
+            }
+
+            .contact_info_wrapper {
+                .contact_info {
+                    @include flex(row, left, normal);
+                    background-color: $secondaryWhite;
+                    background: $secondaryWhite;
+                    border-radius: $primaryBorderGap;
+                    padding: 15px 20px;
+                    gap: 10px;
+                    width: 255px;
+                    height: 54px;
+                    margin-bottom: 12px;
+
+                    span {
+                        @include fontSize(14);
+                        font-weight: 500;
+                        color: #566063;
+                    }
+
+                    &:last-child {
+                        @include noMargin();
+                    }
+                }
+            }
+        }
+
+        .mobile_download_block, .social_media_info {
+            p {
+                @include primaryPTag($TBCFont);
+                @include fontSize(14);
+                margin-top: 56px;
+                margin-bottom: 24px;
+            }
+            a {
+                @include noMargin();
+            }
+        }
+
+        .mobile_download_block {
+            div {
+                @include flex(row, center, center);
+                gap: 10px;
+            }
+        }
+        .social_media_info {
+            div {
+                @include flex(row, center, center);
+                gap: 15px;
+
+                a {
+                    @include flex(row, center, center);
+                    width: 40px;
+                    height: 40px;
+                    background: #F9FAFA;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+}

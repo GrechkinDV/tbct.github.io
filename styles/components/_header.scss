@@ -1,0 +1,40 @@
+@import "./variables";
+@import "./mixins";
+
+header {
+    width: 100vw;
+    height:  96px;
+
+    #header_nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $contentPadding;
+        background: $primaryWhite;
+        box-shadow: 0px 2px 0px rgba(111, 120, 123, 0.05);
+        z-index: 5;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        
+        .nav_column {
+            @include flex(row, center, center);
+            gap: 60px;
+            
+            a {
+                @include fontSize(14);
+                font-weight: $fontLighter;
+                color: $primaryBlack;
+                cursor: pointer;
+
+                &.arrow_link {
+                    @include arrowLink();
+                }
+
+                &:hover {
+                    @include linkHover(1.07);
+                }
+            }
+        }
+    }
+}

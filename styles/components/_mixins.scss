@@ -1,0 +1,173 @@
+@import "./variables";
+
+// Placing
+@mixin noMargin() {
+    margin: 0;
+}
+
+@mixin flex($direction, $alignPosition, $justifyPosition) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $alignPosition;
+    justify-content: $justifyPosition;
+}
+// Placing end
+
+
+// Font & tags
+@mixin font($font) {
+    font-family: $font;
+    font-style: normal;
+}
+
+@mixin fontSize($fontSize) {
+    font-size: $fontSize + px;
+    line-height: $fontSize + 10 + px;
+}
+
+@mixin primaryPTag($color) {
+    @include fontSize(24);
+    @include noMargin();
+    font-weight: $fontBold;
+    color: $color;
+}
+// Font mixins end
+
+// Arrow Link Elements
+@mixin linkHover($scaleSize) {
+    transform: scale($scaleSize);
+    transition: all 0.4s ease;
+}
+
+@mixin arrowLink() {
+    @include flex(row, center, left);
+    @include fontSize(16);
+    
+    gap: $primaryBorderGap;
+    font-weight: $fontBold;
+    
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $primaryBlue;
+}
+
+@mixin arrowButton() {
+    @include arrowLink();
+    justify-content: center;
+    padding: 16px 32px;
+
+    width: 172px;
+    height: 48px;
+
+    background: $primaryBlue;
+    border-radius: 4px;
+
+    color: $primaryWhite;
+
+    &:hover {
+        @include linkHover(1.07);
+    }
+}
+
+// Arrow Link Elements END
+
+// Image block for carousel/banner
+@mixin imageBlockWrapper() {
+    position: relative;
+    margin: $bannerMargin;
+
+    width: 100%;
+    height: 496px;
+}
+
+@mixin imageBlock($objectPosition) {
+    width: inherit;
+    height: inherit;
+    border-radius: $primaryBorderGap;
+    background-size: cover;
+    object-fit: cover;
+    object-position: $objectPosition;
+}
+
+@mixin imageBlockContent($padding, $justifyContent) {
+    background: linear-gradient(180deg, rgba(12, 43, 67, 0.3) 0%, rgba(12, 43, 67, 0) 84.25%), linear-gradient(90deg, rgba(12, 43, 67, 0.65) 5.38%, rgba(12, 43, 67, 0) 100%);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+
+    padding: $padding;
+    gap: 40px;
+    @include flex(column, left, $justifyContent);
+
+    width: inherit;
+    height: inherit;
+
+    p {
+        @include noMargin();
+        font-weight: $fontBold;
+        font-size: 48px;
+        line-height: 64px;
+        color: $primaryWhite;
+    }
+
+    .arrow_button {
+        @include arrowButton();
+    }
+}
+// Image block for carousel/banner END
+
+// OTHER ELEMENS
+@mixin progressBar() {
+    height: 2px;
+    background: $backgroundGrey;
+    border-radius: 2px;
+}
+
+@mixin swiperBar() {
+    @include flex(row, center, center);
+    gap: 59px;
+    margin-top: 47px;
+
+    .progress_bar {
+        @include progressBar();
+        width: calc(100% - 70px);
+    }
+
+    .arrows_container {
+        @include flex(row, center, space-between);
+        gap: 24px;
+
+        svg {
+            &:hover path {
+                transition: all 0.4s ease;
+                fill: $primaryBlue;
+            }
+        }
+    }
+}
+
+@mixin cardsWrapper() {
+    @include flex(row, center, normal);
+    gap: 32px;
+
+    .card {
+        padding: 32px 28px;
+        width: 350px;
+        height: 280px;
+        border: 1px solid $backgroundGrey;
+        border-radius: $primaryBorderGap;
+
+        p {
+            @include primaryPTag($primaryBlack);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 48px;
+            height: 48зч;
+        }
+    }
+}
+// OTHER ELEMENTS END

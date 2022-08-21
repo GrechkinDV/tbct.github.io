@@ -1,0 +1,41 @@
+@import "./components/variables";
+@import "./components/header";
+@import "./components/carousel";
+@import "./components/sections";
+@import "./components/footer";
+@import "./components/toggle";
+
+* {
+    box-sizing: border-box;
+    @include font($TBCFont);
+}
+
+body {
+    @include noMargin();
+    background-color: $secondaryWhite;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: $contentPadding;
+    margin-bottom: $sectionMarginBottom;
+}
+
+.arrow_button {
+    @include arrowButton();
+}
+
+.arrow_link {
+    @include arrowLink();
+}
+
+.swiper_bar {
+    @include swiperBar();
+}
+
+.cards_wrapper {
+    @include cardsWrapper();
+}

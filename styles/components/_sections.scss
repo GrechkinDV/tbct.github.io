@@ -1,0 +1,191 @@
+@import "./variables";
+@import "./mixins";
+
+.side_text {
+    @include flex(column, left, center);
+
+    h2 {
+        font-weight: $fontBold;
+        font-size: 36px;
+        line-height: 52px;
+        color: $primaryBlack;
+        @include noMargin();
+    }
+
+    span {
+        @include fontSize(16);
+        font-weight: $fontLighter;
+        line-height: 28px;
+        color: $secondaryGrey;
+        margin-top: 24px;
+        margin-bottom: 40px;
+    }
+}
+
+.section_header {
+    @include flex(row, center, space-between);
+    margin-bottom: 36px;
+    p {
+        @include primaryPTag($primaryBlack);
+    }
+}
+
+#tbc_info {
+    h1 {
+        font-family: $TBCFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 52px;
+        color: $primaryBlack;
+        margin: 0 0 32px 0;
+    }
+
+    .arrow_link {
+        @include fontSize(16);
+    }
+}
+
+#become_user {
+    @include flex(row, center, normal);
+    background-color: $primaryWhite;
+    height: 464px;
+    gap: 145px;
+
+    div {
+        height: inherit;
+
+        &:nth-child(2) {
+            position: relative;
+
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+#tbc_offers, #tbc_options {
+    #offers_wrrapper {
+        // lt: left-top position
+        // lb: left-bottom position
+        // r: right position
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 270px 270px;
+        height: 540px;
+        grid-gap: 30px;
+        grid-template-areas: 
+            "lt r"
+            "lb r";
+        
+        .offer {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                width: inherit;
+                height: inherit;
+            }
+
+            .offer_content {
+                @include flex(column, left, end);
+                background: linear-gradient(76.95deg, rgba(12, 43, 67, 0.95) 0%, rgba(12, 43, 67, 0.35) 100%);
+                position: absolute;
+                top: 0;
+                padding: 40px;
+                width: inherit;
+                height: inherit;
+
+                p {
+                    @include primaryPTag($primaryWhite);
+                    margin-bottom: 20px;
+                }
+
+                span {
+                    @include fontSize(14);
+                    font-weight: $fontLighter;
+                    color: $primaryGrey;
+                }
+            }
+        }
+    }
+}
+
+#subscribe_now {
+    @include flex(row, center, normal);
+    height: 400px;
+    gap: 75px;
+}
+
+.banner_wrapper {
+    @include imageBlockWrapper();
+    
+    #banner {
+        @include imageBlock(0 40%);
+    }
+
+    .banner_content {
+        @include imageBlockContent(39px 95px, space-between);
+
+        span {
+            @include fontSize(16);
+            color: $primaryWhite;
+            font-weight: 400;
+
+            &:first-child {
+                font-weight: $fontBold;
+            }
+        }
+    }
+}
+
+#tbc_news {
+    .news_wrapper {
+        @include flex(row, column, normal);
+        gap: 30px;
+
+        .news_card {
+            width: 350px;
+            border: 1px solid $backgroundGrey;
+            border-radius: $primaryBorderGap;
+            overflow: hidden;
+
+            img {
+                width: 350px;
+                height: 212px;
+            }
+
+            .news_info {
+                @include flex(column, column, space-between);
+                padding: 28px;
+                height: 228px;
+
+                span {
+                    &:first-child {
+                        font-weight: $fontBold;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: $secondaryGrey;
+                    }
+                    &:nth-child(3) {
+                        color: $secondaryGrey;
+                        font-weight: $fontLighter;
+                    }
+                }
+
+                p {
+                    @include primaryPTag(#15181A);
+                    @include fontSize(16);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@import "./variables";
+@import "./mixins";
+
+#toggles_container {
+    @include flex(row, center, center);
+    gap: 40px;
+
+    .toggle_theme_container {
+        height: 32px;
+        width: 52px;
+        display: grid;
+        place-items: center;
+        #checkbox {
+            display: none;
+
+            &:checked + .toggle::before {
+                position: absolute;
+                left: calc(100% - 30px);
+            }
+        }
+
+        .toggle {
+            height: 32px;
+            width: 52px;
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            background: $backgroundGrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before {
+                content: "";
+                background-image: url(../assets/icons/toggle.svg);
+                height: 28px;
+                width: 28px;
+                position: absolute;
+                left: 2px;
+                border-radius: 50%;
+                background-color: $primaryWhite;
+                transition: all 0.5s ease-in-out;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .toggle_language_container {
+        @include flex(row, center, center);
+        padding: 12px;
+        gap: 6px;
+        width: 70px;
+        height: 40px;
+        background: $secondaryWhite;
+        border-radius: $primaryBorderGap;
+
+        span {
+            @include fontSize(12);
+            font-weight: $fontBold;
+            color: $primaryGrey;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import "./variables";
+@import "./mixins";
+
+.carousel_wrapper {
+    .carousel-inner {
+        @include imageBlockWrapper();
+        .slide_img {
+            @include imageBlock(0 10%);
+            height: 496px;
+        }
+        .carousel_content {
+            @include imageBlockContent(0 95px, center);
+            height: 496px;
+        }
+    }
+}
+
+#carousel_tabs_wrapper {
+    @include flex(center, center, space-between);
+
+    .carousel_tab {
+        width: 255px;
+
+        span {
+            @include fontSize(14);
+            font-weight: 500;
+            color: $primaryGrey;
+        }
+
+        .progress_bar {
+            @include progressBar();
+            margin-top: 12px;
+
+            div {
+                background: $primaryBlue;
+                height: 100%;
+                width: 0;
+            }
+        }
+    }
+}

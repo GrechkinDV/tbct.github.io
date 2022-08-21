@@ -75,9 +75,18 @@ header #header_nav .nav_column a.arrow_link {
   color: #00ADEE;
 }
 
+header #header_nav .nav_column a.arrow_link:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: #00ADEE;
+  text-decoration: none;
+}
+
 header #header_nav .nav_column a:hover {
-  -webkit-transform: scale(1.07);
-          transform: scale(1.07);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   color: #15181A;
@@ -171,8 +180,17 @@ header #header_nav .nav_column a:hover {
 }
 
 .carousel_wrapper .carousel-inner .carousel_content .arrow_button:hover {
-  -webkit-transform: scale(1.07);
-          transform: scale(1.07);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: #00ADEE;
+  text-decoration: none;
+}
+
+.carousel_wrapper .carousel-inner .carousel_content .arrow_button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   color: #FFFFFF;
@@ -291,27 +309,15 @@ header #header_nav .nav_column a:hover {
 #tbc_info .arrow_link {
   font-size: 16px;
   line-height: 26px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  font-size: 16px;
-  line-height: 26px;
-  gap: 6px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
+}
+
+#tbc_info .arrow_link:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   color: #00ADEE;
+  text-decoration: none;
 }
 
 #become_user {
@@ -515,8 +521,17 @@ header #header_nav .nav_column a:hover {
 }
 
 .banner_wrapper .banner_content .arrow_button:hover {
-  -webkit-transform: scale(1.07);
-          transform: scale(1.07);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: #00ADEE;
+  text-decoration: none;
+}
+
+.banner_wrapper .banner_content .arrow_button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   color: #FFFFFF;
@@ -965,8 +980,17 @@ section {
 }
 
 .arrow_button:hover {
-  -webkit-transform: scale(1.07);
-          transform: scale(1.07);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: #00ADEE;
+  text-decoration: none;
+}
+
+.arrow_button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   color: #FFFFFF;
@@ -995,6 +1019,15 @@ section {
   cursor: pointer;
   text-transform: uppercase;
   color: #00ADEE;
+}
+
+.arrow_link:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: #00ADEE;
+  text-decoration: none;
 }
 
 .swiper_bar {

@@ -52,6 +52,10 @@
     cursor: pointer;
     text-transform: uppercase;
     color: $primaryBlue;
+
+    &:hover {
+        @include linkHover(1.03, $primaryBlue);
+    }
 }
 
 @mixin arrowButton() {
@@ -68,7 +72,7 @@
     color: $primaryWhite;
 
     &:hover {
-        @include linkHover(1.07, $primaryWhite);
+        @include linkHover(1.03, $primaryWhite);
     }
 }
 

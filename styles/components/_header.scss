@@ -33,7 +33,7 @@ header {
                 }
 
                 &:hover {
-                    @include linkHover(1.07, $primaryBlack);
+                    @include linkHover(1.03, $primaryBlack);
                 }
             }
         }

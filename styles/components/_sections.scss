@@ -43,7 +43,10 @@
 
     .arrow_link {
         @include fontSize(16);
-        @include arrowLink();
+
+        &:hover {
+            @include linkHover(1, $primaryBlue)
+        }
     }
 }
 
